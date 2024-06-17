@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Real-Time Collaboration Project using OPAL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates a real-time collaboration application using React and OPAL (Open Policy Administration Layer). It includes dynamic policy management, a backend service, and integrates with OPAL for policy enforcement.
 
-## Available Scripts
+## Project Structure 📚
 
-In the project directory, you can run:
+- `opal-server`: OPAL server setup using Docker Compose.
+- `data-source-service`: Node.js service providing user data.
+- `notification-service`: Node.js service handling notifications.
+- `backend`: Node.js service interacting with OPAL to enforce policies.
+- `real-time-collab`: React frontend for the application.
 
-### `npm start`
+## Features ✨
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- User Management: Add, edit, delete, and view users with different roles.
+- Task Management: Create, update, delete, and view tasks.
+- Real-Time Collaboration: Multiple users can interact with the tasks simultaneously.
+- Dynamic Policy Management: Uses OPAL to enforce real-time policies based on user roles and permissions.
+- Notification Service: Users get notifications for any changes in tasks.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites 🤖
 
-### `npm test`
+- Docker
+- Node.js
+- npm
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started ☀️
 
-### `npm run build`
+1. Clone the repository
+```bash
+git clone https://github.com/JashwanthSA/real-time-collab-webapp-using-OPAL.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Setup the opal server
+- Navigate into the opal-server directory and download the docker compose configuration to run OPAL
+```bash
+curl -L https://raw.githubusercontent.com/permitio/opal/master/docker/docker-compose-example.yml > docker-compose.yml
+docker-compose up
+```
+3. Setup the data source service
+```bash
+cd opal-server/data-source-service
+npm install
+node index.js
+```
+4. Setup the notification service
+```bash
+cd notification-service
+npm install
+node index.js
+```
+5. Setup the backend
+```bash
+cd backend
+npm install @opal/client
+node index.js
+```
+6. Setup the frontend
+```bash
+cd ../real-time-collab
+npm install
+npm start
+```
+7. Run and access the application!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
