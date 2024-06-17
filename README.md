@@ -8,7 +8,6 @@ This project demonstrates a real-time collaboration application using React and 
 - `data-source-service`: Node.js service providing user data.
 - `notification-service`: Node.js service handling notifications.
 - `backend`: Node.js service interacting with OPAL to enforce policies.
-- `real-time-collab`: React frontend for the application.
 
 ## Features ✨
 
