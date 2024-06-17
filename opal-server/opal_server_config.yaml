@@ -1,0 +1,6 @@
+data_sources:
+  - url: "http://localhost:4000/data-source"
+policy_repo:
+  - url: "https://github.com/permitio/opal-example-policy-repo.git"
+notifications:
+  - url: "http://localhost:4001/notifications"
